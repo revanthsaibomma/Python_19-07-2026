@@ -1,0 +1,33 @@
+#8. Banking Fraud Detection Logic
+#Take:
+#•	transaction amount
+#•	location mismatch
+#•	unusual login time
+#•	account age
+#Rules:
+#•	High-value transaction with location mismatch → Fraud alert
+#•	New account with unusual login time → Risk alert
+#•	Medium transaction but repeated unusual activity → Review
+#•	Else approve transaction
+
+transaction_amount = float(input("Enter Transaction Amount (₹): "))
+location = input("Is there a Location Mismatch? (yes/no): ").lower()
+login_time = input("Is the Login Time Unusual? (yes/no): ").lower()
+account_age = int(input("Enter Account Age (in months): "))
+unusual_activity = input("Is there Repeated Unusual Activity? (yes/no): ").lower()
+
+if transaction_amount > 100000 and location == "yes":
+    print("Status : Fraud Alert")
+    print("Reason : High-value transaction with location mismatch.")
+
+elif account_age < 6 and login_time == "yes":
+    print("Status : Risk Alert")
+    print("Reason : New account with unusual login time.")
+
+elif transaction_amount >= 50000 and transaction_amount <= 100000 and unusual_activity == "yes":
+    print("Status : Transaction Under Review")
+    print("Reason : Medium-value transaction with repeated unusual activity.")
+
+else:
+    print("Status : Transaction Approved")
+    print("Reason : No suspicious activity detected.")

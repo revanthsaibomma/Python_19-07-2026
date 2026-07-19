@@ -1,0 +1,28 @@
+# 9. University Admission Eligibility
+# Input:
+# •	entrance exam score
+# •	12th percentage
+# •	category
+# •	extracurricular score
+# Rules:
+# •	High score + strong academics → Direct admission
+# •	Reserved category may have relaxation
+# •	Moderate score + extracurricular achievements → Waitlist
+# •	Low score → Reject
+
+entrance_score = int(input("Enter Entrance Exam Score: "))
+percentage = float(input("Enter 12th Percentage: "))
+category = input("Enter Category (General/Reserved): ").lower()
+extracurricular = int(input("Enter Extracurricular Score: "))
+
+if entrance_score >= 90 and percentage >= 85:
+    print("Admission Status : Direct Admission")
+
+elif category == "reserved" and entrance_score >= 80 and percentage >= 75:
+    print("Admission Status : Direct Admission (Category Relaxation)")
+
+elif entrance_score >= 70 and extracurricular >= 80:
+    print("Admission Status : Waitlist")
+
+else:
+    print("Admission Status : Rejected")
