@@ -60,10 +60,11 @@ else:
     elif monthly_salary >= 100000:
         max_loan = 1500000
     else:
-
-
+        max_loan = 0
+    
     if existing_emi > 0.4 * monthly_salary:
         print("The application is rejected.")
+        print("Reason: Existing EMI is more than 40% of monthly salary.")
     else:
         print(f"Applicant Name: {name}")
         print(f"Loan Application Status: Eligible")
